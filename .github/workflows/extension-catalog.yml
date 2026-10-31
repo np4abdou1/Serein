@@ -4,18 +4,7 @@
 # and only when package bytes, manifests or previews changed (see extensions/README.md).
 name: Extension catalog
 on:
-  push:
-    branches: [main]
-    paths:
-      - extensions/themes/**
-      - extensions/previews/**
-      - extensions/plugins/packages/**
-      - extensions/plugins/*/manifest.json
-      - extensions/catalog.py
-      # A hand edit is regenerated. This workflow's own push uses GITHUB_TOKEN, which
-      # never triggers workflows, so it cannot loop.
-      - extensions/catalog.json
-  workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
 # Runs queue in push order; a pending run is replaced by the newest, which pins the latest bytes.
