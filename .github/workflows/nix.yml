@@ -1,25 +1,6 @@
 name: Nix test build
 on:
-  push:
-    branches: [main]
-    paths: &paths
-      - "flake.*"
-      - "packaging/nix/**"
-      - ".github/workflows/nix.yml"
-      - "**/Cargo.*"
-      - "rust-toolchain.toml"
-      - "crates/**"
-      - "apps/**"
-      - "vendor/**"
-      - "packaging/**"
-      - "assets/**"
-      - "LICENSE*"
-      - "THIRD_PARTY_NOTICES.md"
-      - "README.md"
-  pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
-    paths: *paths
-  workflow_dispatch:
+  workflow_call:
 
 concurrency:
   group: nix-test-build-${{ github.workflow }}-${{ github.ref }}

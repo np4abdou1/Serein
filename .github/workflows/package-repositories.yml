@@ -1,27 +1,6 @@
 name: Prepare signed package repositories
 
 on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: Existing Serein release tag to package
-        required: true
-        type: string
-      channel:
-        description: Repository release channel
-        required: true
-        type: choice
-        options: [nightly, production]
-      base_url:
-        description: Public HTTPS root where the generated repository tree will be hosted
-        required: false
-        default: https://viceverse-cz.github.io/Serein
-        type: string
-      deploy:
-        description: Deploy the signed tree to the configured GitHub Pages site
-        required: false
-        default: false
-        type: boolean
   workflow_call:
     inputs:
       tag:
