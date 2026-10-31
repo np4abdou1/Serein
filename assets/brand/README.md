@@ -19,8 +19,9 @@ other vendor's branding, and no third-party font is embedded in them.
     rsvg-convert -w 72 -h 72 -o assets/brand/serein-tray.png
   ```
 
-The packaged platform icons built from the same artwork live in `packaging/` (`macos/Serein.icns`
-and `Serein.icon`, `windows/Serein.ico`, `linux/hicolor/*`).
+The packaged platform icon is Discord's official app artwork supplied as
+`packaging/windows/Serein.ico`; platform-specific raster and bundle formats use that same
+source artwork.
 
 Brand palette: `#8BBEFF` → `#506DDC` → `#2D247C` plate gradient, `#F5FAFF` and `#D1E0FF` waves.
 The interface accent (`design::DEFAULT_PRIMARY_RGB`, `#1a72e8`) is drawn from the same family and

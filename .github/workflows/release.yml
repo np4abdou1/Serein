@@ -2,8 +2,6 @@ name: Release
 run-name: ${{ inputs.channel || 'nightly' }} release by @${{ github.actor }}
 
 on:
-  schedule:
-    - cron: '17 3 * * *'
   workflow_dispatch:
     inputs:
       channel:
